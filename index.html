@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" ng-app="app">
     <head>
         <meta charset="utf-8">
         <title>168 Hours</title>
@@ -8,10 +8,25 @@
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/main.css">
     </head>
-    <body>
-
-        <p>Hello world!</p>
-
+    <body ng-controller="ScheduleListCtrl">
+        <h1>168 Hours</h1>
+        <p>You have {{timeRemaining / 60}} unscheduled hours per week.</p>
+        <table class="activity-table">
+          <tr>
+            <th>Activity</th>
+            <th>Hours</th>
+            <th>Days per week</th>
+            <th>Hours per week</th>
+            <th>Category</th>
+          </tr>
+          <tr ng-repeat="activity in activities">
+            <td>{{activity.name}}</td>
+            <td>{{activity.minutes / 60}}</td>
+            <td>{{activity.daysPerWeek}}</td>
+            <td>{{activity.minutes / 60 * activity.daysPerWeek}}</td>
+            <td>{{activity.category}}</td>
+          </tr>
+        </table>
         <script src="js/bundle.js"></script>
     </body>
 </html>
