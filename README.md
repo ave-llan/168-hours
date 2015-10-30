@@ -1,20 +1,5 @@
-A simple sandbox for front-end development with a live view of your code, automatically updated whenever it is changed.
+A one-page app built with Angular.js to help you use the 168 hours you get per week.
 
-## Set up
-
-Clone the repository, deleting .git for clean start.
-
-```
-git clone https://github.com/jrleszcz/frontend-sandbox.git frontend-sandbox
-rm -rf frontend-sandbox/.git
-```
-
-Move into your new project directory and install packages.
-
-```
-cd frontend-sandbox
-npm install
-```
 
 ## Usage
 
