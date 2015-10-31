@@ -1,9 +1,4 @@
-require('angular')
-
-
-var app = angular.module('app', []);
-
-app.controller('ScheduleListCtrl', function($scope) {
+module.exports = function($scope) {
   $scope.activities = [
   {'name': 'sleep',
    'minutes': 420,
@@ -74,6 +69,4 @@ app.controller('ScheduleListCtrl', function($scope) {
     return 60 * 168 - timeUsed // in minutes
   }
 
-})
-
-
+}

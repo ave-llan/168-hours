@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "tape \"test/**/*.test.js\" | faucet",
-    "build": "browserify js/main.js -o js/bundle.js",
-    "watch": "watchify js/main.js -o js/bundle.js --debug --verbose",
+    "build": "browserify js/app.js -o js/bundle.js",
+    "watch": "watchify js/app.js -o js/bundle.js --debug --verbose",
     "view": "reload -b"
   },
   "repository": {
