@@ -64,7 +64,10 @@ module.exports = function($scope) {
    'minutes': 600,
    'daysPerWeek': 5,
    'category': 'work'}
-  ]
+  ].sort(function (a, b) {
+    return b.minutes * b.daysPerWeek - a.minutes * a.daysPerWeek
+  })
+
 
   $scope.timeRemaining = calculateTimeRemaining()
 
