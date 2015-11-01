@@ -27,6 +27,21 @@
             <td>{{activity.category}}</td>
           </tr>
         </table>
+        <div class="activity-table">
+            <div ng-repeat="activity in activities" class='activity-card'>
+                <div class="hours-per-week">
+                    {{activity.minutes / 60 * activity.daysPerWeek}}
+                </div>
+                <div class='activity-info'>
+                    <p class='activity-name'>
+                        {{activity.name}}
+                    </p>
+                    <p class='activity-duration'>
+                        {{activity.minutes / 60}} × {{activity.daysPerWeek}}
+                    </p>
+                </div>
+            </div>
+        </div>
         <script src="js/bundle.js"></script>
     </body>
 </html>
