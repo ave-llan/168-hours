@@ -55,7 +55,15 @@ module.exports = function($scope) {
   {'name': 'watch a movie',
    'minutes': 120,
    'daysPerWeek': 1,
-   'category': 'leisure'}
+   'category': 'leisure'},
+  {'name': 'go on a hike',
+   'minutes': 180,
+   'daysPerWeek': 1,
+   'category': 'health'},
+  {'name': 'work',
+   'minutes': 600,
+   'daysPerWeek': 5,
+   'category': 'work'}
   ]
 
   $scope.timeRemaining = calculateTimeRemaining()
