@@ -14,6 +14,7 @@
         <div class="background-hours">{{timeRemaining / 60}}</div>
 
         <p>You have <strong>{{timeRemaining / 60}}</strong> unscheduled hours per week.</p>
+        <p>Search: <input ng-model="query"></p>
         <table class="activity-table">
           <tr>
             <th>Activity</th>
@@ -22,7 +23,7 @@
             <th>Hours per week</th>
             <th>Category</th>
           </tr>
-          <tr ng-repeat="activity in activities">
+          <tr ng-repeat="activity in activities | filter:query">
             <td>{{activity.name}}</td>
             <td>{{activity.minutes / 60}}</td>
             <td>{{activity.daysPerWeek}}</td>
