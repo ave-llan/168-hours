@@ -1,6 +1,6 @@
 @charset "UTF-8";
 
-@import url(https://fonts.googleapis.com/css?family=PT+Sans|PT+Serif:400,700,400italic);
+@import url(https://fonts.googleapis.com/css?family=Oswald|PT+Serif|PT+Sans);
 
 /* avoid landscape zoom-in on mobile */
 html {
@@ -15,6 +15,13 @@ body {
   padding: 1em;
 }
 
+h1 {
+  font-family: Oswald;
+  font-size: 5.5em;
+  margin: 0;
+  color: rgba(252, 245, 118, 1);
+}
+
 td, th {
   padding: 0 0.5em 0 0.5em;
 }
@@ -23,6 +30,9 @@ td, th {
   display: flex;
   flex-direction: row;
   align-items: center;
+  background-color: #c6dbef;
+  max-width: 200px;
+  margin: 1em;
 }
 
 .hours-per-week {
@@ -44,4 +54,13 @@ td, th {
 .activity-duration {
   margin: 0;
   opacity: 0.7;
+}
+
+.background-hours {
+  font-family: Oswald;
+  font-size: 30em;
+  position: fixed;
+  color: rgba(255,254,208,1);
+  z-index: -1;
+  display: none;
 }
