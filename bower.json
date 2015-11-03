@@ -1,0 +1,14 @@
+{
+  "name": "168-hours",
+  "description": "Angularjs app to help you use your 168 hours per week",
+  "version": "0.0.0",
+  "homepage": "https://github.com/jrleszcz/168-hours",
+  "license": "MIT",
+  "private": false,
+  "dependencies": {
+    "angular": "1.4.x",
+    "angular-mocks": "1.4.x",
+    "jquery": "~2.1.1",
+    "bootstrap": "~3.1.1"
+  }
+}
