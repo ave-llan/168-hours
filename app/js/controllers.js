@@ -77,7 +77,7 @@ oneSixtyEightApp.controller('ScheduleListCtrl', function($scope) {
   })
 
   $scope.timeRemaining = calculateTimeRemaining()
-  $scope.orderProp = 'name'
+  $scope.orderProp = '-hoursPerWeek'
 
   function calculateTimeRemaining () {
     var timeUsed = $scope.activities.map(function (activity) {
