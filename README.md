@@ -3,12 +3,14 @@ A one-page app built with Angular.js to help you use the 168 hours you get per w
 
 ## Usage
 
-To watch your project for changes and update them live in a simple server, open two terminal tabs run:
 
+After cloning the project, install packages:
 ```
-npm run watch
+npm install
 ```
 
+To start a local server:
 ```
-npm run view
+npm start
 ```
+And point your browser at `http://localhost:8080/app/index.html`.
