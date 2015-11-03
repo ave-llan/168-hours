@@ -2,7 +2,7 @@
 
 /* Controllers */
 
-var oneSixtyEightApp = angular.module('app', [])
+var oneSixtyEightApp = angular.module('oneSixtyEightApp', [])
 
 
 oneSixtyEightApp.controller('ScheduleListCtrl', function($scope) {
