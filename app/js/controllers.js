@@ -1,4 +1,11 @@
-module.exports = function($scope) {
+'use strict';
+
+/* Controllers */
+
+var oneSixtyEightApp = angular.module('app', [])
+
+
+oneSixtyEightApp.controller('ScheduleListCtrl', function($scope) {
   $scope.activities = [
   {'name': 'sleep',
    'minutes': 420,
@@ -80,4 +87,4 @@ module.exports = function($scope) {
     return 60 * 168 - timeUsed // in minutes
   }
 
-}
+})
