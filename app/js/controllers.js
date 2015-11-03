@@ -71,12 +71,13 @@ oneSixtyEightApp.controller('ScheduleListCtrl', function($scope) {
    'minutes': 600,
    'daysPerWeek': 5,
    'category': 'work'}
-  ].sort(function (a, b) {
-    return b.minutes * b.daysPerWeek - a.minutes * a.daysPerWeek
+  ].map(function (activity) {
+    activity.hoursPerWeek = activity.minutes / 60 * activity.daysPerWeek
+    return activity
   })
 
-
   $scope.timeRemaining = calculateTimeRemaining()
+  $scope.orderProp = 'name'
 
   function calculateTimeRemaining () {
     var timeUsed = $scope.activities.map(function (activity) {

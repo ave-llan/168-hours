@@ -16,7 +16,17 @@
         <div class="background-hours">{{timeRemaining / 60}}</div>
 
         <p>You have <strong>{{timeRemaining / 60}}</strong> unscheduled hours per week.</p>
-        <p>Search: <input ng-model="query"></p>
+        <p>
+            Search: <input ng-model="query"></p>
+        <p>
+            Sort by:
+            <select ng-model="orderProp">
+              <option value="name">Alphabetical</option>
+              <option value="-hoursPerWeek">Hours Per Week</option>
+              <option value="-daysPerWeek">Days Per Week</option>
+              <option value="-minutes">Activity Length</option>
+            </select>
+        </p>
         <table class="activity-table">
           <tr>
             <th>Activity</th>
@@ -25,11 +35,11 @@
             <th>Hours per week</th>
             <th>Category</th>
           </tr>
-          <tr ng-repeat="activity in activities | filter:query">
+          <tr ng-repeat="activity in activities | filter:query | orderBy:orderProp">
             <td>{{activity.name}}</td>
             <td>{{activity.minutes / 60}}</td>
             <td>{{activity.daysPerWeek}}</td>
-            <td>{{activity.minutes / 60 * activity.daysPerWeek}}</td>
+            <td>{{activity.hoursPerWeek}}</td>
             <td>{{activity.category}}</td>
           </tr>
         </table>
