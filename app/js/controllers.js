@@ -4,79 +4,17 @@
 
 var oneSixtyEightApp = angular.module('oneSixtyEightApp', [])
 
+oneSixtyEightApp.controller('ScheduleListCtrl', function($scope, $http) {
+  $http.get('activities/activities.json').success(function (data) {
 
-oneSixtyEightApp.controller('ScheduleListCtrl', function($scope) {
-  $scope.activities = [
-  {'name': 'sleep',
-   'minutes': 420,
-   'daysPerWeek': 7,
-   'category': 'sleep'},
-  {'name': 'eat breakfast',
-   'minutes': 45,
-   'daysPerWeek': 7,
-   'category': 'food'},
-  {'name': 'Rudy AM walk',
-   'minutes': 30,
-   'daysPerWeek': 7,
-   'category': 'pet'},
-  {'name': 'eat lunch',
-   'minutes': 30,
-   'daysPerWeek': 7,
-   'category': 'food'},
-  {'name': 'Rudy lunch walk',
-   'minutes': 60,
-   'daysPerWeek': 7,
-   'category': 'pet'},
-  {'name': 'cook/eat dinner',
-   'minutes': 75,
-   'daysPerWeek': 7,
-   'category': 'food'},
-  {'name': 'Rudy PM walk',
-   'minutes': 30,
-   'daysPerWeek': 7,
-   'category': 'pet'},
-  {'name': 'exercise',
-   'minutes': 45,
-   'daysPerWeek': 5,
-   'category': 'health'},
-  {'name': 'study math',
-   'minutes': 60,
-   'daysPerWeek': 4,
-   'category': 'study'},
-  {'name': 'read novel',
-   'minutes': 45,
-   'daysPerWeek': 7,
-   'category': 'leisure'},
-  {'name': 'birdwatching',
-   'minutes': 150,
-   'daysPerWeek': 1,
-   'category': 'leisure'},
-  {'name': 'grocery shopping',
-   'minutes': 90,
-   'daysPerWeek': 1,
-   'category': 'chores'},
-  {'name': 'vacuum',
-   'minutes': 45,
-   'daysPerWeek': 1,
-   'category': 'chores'},
-  {'name': 'watch a movie',
-   'minutes': 120,
-   'daysPerWeek': 1,
-   'category': 'leisure'},
-  {'name': 'go on a hike',
-   'minutes': 180,
-   'daysPerWeek': 1,
-   'category': 'health'},
-  {'name': 'work',
-   'minutes': 600,
-   'daysPerWeek': 5,
-   'category': 'work'}
-  ].map(function (activity) {
-    activity.hoursPerWeek = activity.minutes / 60 * activity.daysPerWeek
-    return activity
+    $scope.activities = data.map(function (activity) {
+      activity.hoursPerWeek = activity.minutes / 60 * activity.daysPerWeek
+      return activity
+    })
+
+    $scope.timeRemaining = calculateTimeRemaining()
   })
 
-  $scope.timeRemaining = calculateTimeRemaining()
   $scope.orderProp = '-hoursPerWeek'
 
   function calculateTimeRemaining () {
