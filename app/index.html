@@ -38,10 +38,10 @@
           </tr>
           <tr ng-repeat="activity in activities | filter:query | orderBy:orderProp">
             <td><input type="text" ng-model="activity.name"></td>
-            <td><input type="number" ng-model="activity.hours"></td>
-            <td><input type="number" ng-model="activity.minutes"></td>
-            <td><input type="number" ng-model="activity.daysPerWeek"</td>
-            <td>{{(activity.minutes / 60 + activity.hours) * activity.daysPerWeek}}</td>
+            <td><input type="number" ng-model="activity.hours" ng-change="updateHoursLeft()"></td>
+            <td><input type="number" ng-model="activity.minutes" ng-change="updateHoursLeft()"></td>
+            <td><input type="number" ng-model="activity.daysPerWeek" ng-change="updateHoursLeft()"</td>
+            <td>{{hoursPerWeek(activity.name)}}</td>
             <td>{{activity.category}}</td>
           </tr>
         </table>
