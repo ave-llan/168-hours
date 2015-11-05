@@ -37,10 +37,10 @@
             <th>Category</th>
           </tr>
           <tr ng-repeat="activity in activities | filter:query | orderBy:orderProp">
-            <td><input type="text" ng-model="activity.name"></td>
-            <td><input type="number" ng-model="activity.hours" ng-change="updateHoursLeft()"></td>
-            <td><input type="number" ng-model="activity.minutes" ng-change="updateHoursLeft()"></td>
-            <td><input type="number" ng-model="activity.daysPerWeek" ng-change="updateHoursLeft()"</td>
+            <td><input type="text" ng-model="activity.name"/></td>
+            <td><input type="number" class="hoursDuration" ng-model="activity.hours" ng-change="updateHoursLeft()"/></td>
+            <td><input type="number" ng-model="activity.minutes" ng-change="updateHoursLeft()"/></td>
+            <td><input type="number" ng-model="activity.daysPerWeek" ng-change="updateHoursLeft()"/></td>
             <td>{{hoursPerWeek(activity.name)}}</td>
             <td>{{activity.category}}</td>
           </tr>
