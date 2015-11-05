@@ -38,5 +38,17 @@ oneSixtyEightApp.controller('ScheduleListCtrl', ['$scope', '$http',
 
     $scope.updateHoursLeft = function () {
       $scope.timeRemaining = calculateTimeRemaining()
+      console.log('updating hours')
+    }
+
+    $scope.addActivity = function () {
+      $scope.activities.push({name: '', hours: 0, minutes: 0, daysPerWeek: 1})
+    }
+
+    $scope.deleteActivity = function (activityName) {
+      $scope.activities = $scope.activities.filter(function (activity) {
+        return activity.name !== activityName
+      }) // (TODO add unique ID so there can be multipe items with same name)
+      $scope.updateHoursLeft()
     }
 }])
