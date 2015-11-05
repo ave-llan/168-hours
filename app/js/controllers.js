@@ -38,7 +38,6 @@ oneSixtyEightApp.controller('ScheduleListCtrl', ['$scope', '$http',
 
     $scope.updateHoursLeft = function () {
       $scope.timeRemaining = calculateTimeRemaining()
-      console.log('updating hours')
     }
 
     $scope.addActivity = function () {
