@@ -1,98 +1,114 @@
 [
   {
     "name": "sleep",
-    "minutes": 420,
+    "minutes": 0,
     "daysPerWeek": 7,
-    "category": "sleep"
+    "category": "sleep",
+    "hours": 7
   },
   {
     "name": "eat breakfast",
     "minutes": 45,
     "daysPerWeek": 7,
-    "category": "food"
+    "category": "food",
+    "hours": 0
   },
   {
     "name": "Rudy AM walk",
     "minutes": 30,
     "daysPerWeek": 7,
-    "category": "pet"
+    "category": "pet",
+    "hours": 0
   },
   {
     "name": "eat lunch",
     "minutes": 30,
     "daysPerWeek": 7,
-    "category": "food"
+    "category": "food",
+    "hours": 0
   },
   {
     "name": "Rudy lunch walk",
-    "minutes": 60,
+    "minutes": 0,
     "daysPerWeek": 7,
-    "category": "pet"
+    "category": "pet",
+    "hours": 1
   },
   {
     "name": "cook/eat dinner",
-    "minutes": 75,
+    "minutes": 15,
     "daysPerWeek": 7,
-    "category": "food"
+    "category": "food",
+    "hours": 1
   },
   {
     "name": "Rudy PM walk",
     "minutes": 30,
     "daysPerWeek": 7,
-    "category": "pet"
+    "category": "pet",
+    "hours": 0
   },
   {
     "name": "exercise",
     "minutes": 45,
     "daysPerWeek": 5,
-    "category": "health"
+    "category": "health",
+    "hours": 0
   },
   {
     "name": "study math",
-    "minutes": 60,
+    "minutes": 0,
     "daysPerWeek": 4,
-    "category": "study"
+    "category": "study",
+    "hours": 1
   },
   {
     "name": "read novel",
     "minutes": 45,
     "daysPerWeek": 7,
-    "category": "leisure"
+    "category": "leisure",
+    "hours": 0
   },
   {
     "name": "birdwatching",
-    "minutes": 150,
+    "minutes": 30,
     "daysPerWeek": 1,
-    "category": "leisure"
+    "category": "leisure",
+    "hours": 2
   },
   {
     "name": "grocery shopping",
-    "minutes": 90,
+    "minutes": 30,
     "daysPerWeek": 1,
-    "category": "chores"
+    "category": "chores",
+    "hours": 1
   },
   {
     "name": "vacuum",
     "minutes": 45,
     "daysPerWeek": 1,
-    "category": "chores"
+    "category": "chores",
+    "hours": 0
   },
   {
     "name": "watch a movie",
-    "minutes": 120,
+    "minutes": 0,
     "daysPerWeek": 1,
-    "category": "leisure"
+    "category": "leisure",
+    "hours": 2
   },
   {
     "name": "go on a hike",
-    "minutes": 180,
+    "minutes": 0,
     "daysPerWeek": 1,
-    "category": "health"
+    "category": "health",
+    "hours": 3
   },
   {
     "name": "work",
-    "minutes": 600,
+    "minutes": 0,
     "daysPerWeek": 5,
-    "category": "work"
+    "category": "work",
+    "hours": 10
   }
 ]
