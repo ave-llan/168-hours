@@ -31,15 +31,17 @@
           <tr>
             <th>Activity</th>
             <th>Hours</th>
+            <th>Minutes</th>
             <th>Days per week</th>
             <th>Hours per week</th>
             <th>Category</th>
           </tr>
           <tr ng-repeat="activity in activities | filter:query | orderBy:orderProp">
-            <td>{{activity.name}}</td>
-            <td>{{activity.minutes / 60}}</td>
-            <td>{{activity.daysPerWeek}}</td>
-            <td>{{activity.hoursPerWeek}}</td>
+            <td><input type="text" ng-model="activity.name"></td>
+            <td><input type="number" ng-model="activity.hours"></td>
+            <td><input type="number" ng-model="activity.minutes"></td>
+            <td><input type="number" ng-model="activity.daysPerWeek"</td>
+            <td>{{(activity.minutes / 60 + activity.hours) * activity.daysPerWeek}}</td>
             <td>{{activity.category}}</td>
           </tr>
         </table>
