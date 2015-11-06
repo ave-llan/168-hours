@@ -37,9 +37,9 @@
           </tr>
           <tr ng-repeat="activity in activities | filter:query | orderBy:orderProp">
             <td><input type="text" ng-model="activity.name"/></td>
-            <td><input type="number" class="hours-input" ng-model="activity.hours" ng-change="updateHoursLeft()"/></td>
-            <td><input type="number" ng-model="activity.minutes" ng-change="updateHoursLeft()"/></td>
-            <td><input type="number" ng-model="activity.daysPerWeek" ng-change="updateHoursLeft()"/></td>
+            <td><input type="number" class="hours-input" ng-model="activity.hours" min="0" max="24" ng-change="updateHoursLeft()"/></td>
+            <td><input type="number" ng-model="activity.minutes" min="0" max="59" ng-change="updateHoursLeft()"/></td>
+            <td><input type="number" ng-model="activity.daysPerWeek" min="1" max="7" ng-change="updateHoursLeft()"/></td>
             <td>{{hoursPerWeek(activity.name)}}</td>
             <td><a href="" ng-click="deleteActivity(activity.name)">x</a></td>
           </tr>
