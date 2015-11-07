@@ -13,10 +13,10 @@ oneSixtyEightApp.controller('ScheduleListCtrl', ['$scope', '$http',
         return activity
       })
 
+      $scope.sortBy('-hoursPerWeek') // sort by hours per week to start
+
       $scope.timeRemaining = calculateTimeRemaining()
     })
-
-    $scope.orderProp = '-hoursPerWeek'
 
     function calculateTimeRemaining () {
       var timeUsed = $scope.activities.map(function (activity) {
@@ -49,5 +49,22 @@ oneSixtyEightApp.controller('ScheduleListCtrl', ['$scope', '$http',
         return activity.name !== activityName
       }) // (TODO add unique ID so there can be multipe items with same name)
       $scope.updateHoursLeft()
+    }
+
+    $scope.sortBy = function (sortingField) {
+      console.log('sorting by:', sortingField)
+      // check for reverse sort
+      var reverse = false
+      if (sortingField[0] === '-') {
+        reverse = true
+        sortingField = sortingField.slice(1)
+      }
+      $scope.activities.sort(function (a, b) {
+        if (a[sortingField] < b[sortingField])
+          return reverse ? 1 : -1
+        if (a[sortingField] > b[sortingField])
+          return reverse ? -1 : 1
+        return 0
+      })
     }
 }])

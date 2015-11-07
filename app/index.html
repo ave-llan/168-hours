@@ -35,7 +35,14 @@
             <th>Days per week</th>
             <th>Hours per week</th>
           </tr>
-          <tr ng-repeat="activity in activities | filter:query | orderBy:orderProp">
+          <div class="sort-buttons">
+            <span>Sort by: </span>
+            <button ng-click="sortBy('-hoursPerWeek')">Hours per Week</button>
+            <button ng-click="sortBy('-daysPerWeek')">Days per Week</button>
+            <button ng-click="sortBy('name')">Name</button>
+
+          </div>
+          <tr ng-repeat="activity in activities | filter:query">
             <td><input type="text" ng-model="activity.name"/></td>
             <td><input type="number" class="hours-input" ng-model="activity.hours" min="0" max="24" ng-change="updateHoursLeft()"/></td>
             <td><input type="number" ng-model="activity.minutes" min="0" max="59" ng-change="updateHoursLeft()"/></td>
