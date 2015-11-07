@@ -44,10 +44,5 @@ describe('oneSixtyEightApp controllers', function() {
         'sleep', 'food', 'pet'])
     })
 
-    it('should set the default value of orderProp model', function() {
-      $httpBackend.flush()
-      expect(scope.orderProp).toBe('-hoursPerWeek')
-    })
-
   })
 })
