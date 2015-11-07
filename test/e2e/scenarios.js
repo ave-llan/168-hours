@@ -25,25 +25,25 @@ describe('168 Hours App', function () {
       expect(activityList.count()).toBe(1)
     })
 
-    it('should be possible to control activity order via the drop down select box', function () {
+    it('should be possible to control activity order via the order buttons', function () {
+      query.clear()
+      query.sendKeys('leisure') // narrow data set
 
-      var activityNameColumn = element.all(by.repeater('activity in activities').column('activity.name'))
-      var query = element(by.model('query'))
+      // var activityNameColumn = element.all(by.repeater('activity in activities').column('activity.name'))
 
+      expect(activityList.count()).toBe(3)
       function getNames () {
-        return activityNameColumn.map(function (elm) {
-          return elm.getText()
+        return element.all(by.css('#name-input')).map(function (elm) {
+          return elm.getAttribute('value') // get current value of select field
         })
       }
-
-      query.sendKeys('leisure') // narrow data set
 
       expect(getNames()).toEqual([
         'read novel',
         'birdwatching',
         'watch a movie'
         ])
-
+       /*
       element(by.model('orderProp')).element(by.css('option[value="name"]')).click()
 
       expect(getNames()).toEqual([
@@ -51,7 +51,7 @@ describe('168 Hours App', function () {
         'read novel',
         'watch a movie'
         ])
-
+      */
     })
 
   })
