@@ -52,7 +52,6 @@ oneSixtyEightApp.controller('ScheduleListCtrl', ['$scope', '$http',
     }
 
     $scope.sortBy = function (sortingField) {
-      console.log('sorting by:', sortingField)
       // check for reverse sort
       var reverse = false
       if (sortingField[0] === '-') {
