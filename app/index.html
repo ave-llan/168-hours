@@ -18,15 +18,12 @@
         <p>You have <strong>{{timeRemaining / 60}}</strong> unscheduled hours per week.</p>
         <p>
             Search: <input ng-model="query"></p>
-        <p>
-            Sort by:
-            <select ng-model="orderProp">
-              <option value="name">Alphabetical</option>
-              <option value="-hoursPerWeek">Hours Per Week</option>
-              <option value="-daysPerWeek">Days Per Week</option>
-              <option value="-minutes">Activity Length</option>
-            </select>
-        </p>
+        <div class="sort-buttons">
+          <span>Sort by: </span>
+          <button ng-click="sortBy('-hoursPerWeek')">Hours per Week</button>
+          <button ng-click="sortBy('-daysPerWeek')">Days per Week</button>
+          <button ng-click="sortBy('name')">Name</button>
+        </div>
         <table class="activity-table">
           <tr>
             <th>Activity</th>
@@ -35,13 +32,7 @@
             <th>Days per week</th>
             <th>Hours per week</th>
           </tr>
-          <div class="sort-buttons">
-            <span>Sort by: </span>
-            <button ng-click="sortBy('-hoursPerWeek')">Hours per Week</button>
-            <button ng-click="sortBy('-daysPerWeek')">Days per Week</button>
-            <button ng-click="sortBy('name')">Name</button>
 
-          </div>
           <tr ng-repeat="activity in activities | filter:query">
             <td><input id="name-input" type="text" ng-model="activity.name"/></td>
             <td><input type="number" class="hours-input" ng-model="activity.hours" min="0" max="24" ng-change="updateHoursLeft()"/></td>
