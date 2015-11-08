@@ -43,15 +43,26 @@ describe('168 Hours App', function () {
         'birdwatching',
         'watch a movie'
         ])
-       /*
-      element(by.model('orderProp')).element(by.css('option[value="name"]')).click()
 
+      var sortButtons = element.all(by.css('.sort-buttons button'))
+      expect(sortButtons.count()).toBe(3)
+
+      // click 'sort by name' button
+      sortButtons.get(2).click()
       expect(getNames()).toEqual([
         'birdwatching',
         'read novel',
         'watch a movie'
         ])
-      */
+
+      // click 'days per week' button
+      sortButtons.get(1).click()
+      expect(getNames()).toEqual([
+        'read novel',
+        'birdwatching',
+        'watch a movie'
+        ])
+
     })
 
   })
