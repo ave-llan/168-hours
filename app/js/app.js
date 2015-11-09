@@ -14,6 +14,10 @@ oneSixtyEightApp.config(['$routeProvider',
         templateUrl: 'partials/activity-list.html',
         controller: 'ScheduleListCtrl'
       }).
+      when('/activities/:activityID', {
+        templateUrl: 'partials/activity-detail.html',
+        controller: 'ActivityDetailCtrl'
+      }).
       otherwise({
         redirectTo: '/activities'
       })
