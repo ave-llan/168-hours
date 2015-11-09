@@ -7,4 +7,14 @@ var oneSixtyEightApp = angular.module('oneSixtyEightApp', [
   'oneSixtyEightControllers'
 ])
 
-
+oneSixtyEightApp.config(['$routeProvider',
+  function($routeProvider) {
+    $routeProvider.
+      when('/activities', {
+        templateUrl: 'partials/activity-list.html',
+        controller: 'ScheduleListCtrl'
+      }).
+      otherwise({
+        redirectTo: '/activities'
+      })
+  }])

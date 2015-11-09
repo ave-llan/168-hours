@@ -1,0 +1,48 @@
+<div class="background-hours">{{timeRemaining / 60}}</div>
+
+<p>You have <strong>{{timeRemaining / 60}}</strong> unscheduled hours per week.</p>
+<p>
+    Search: <input ng-model="query"></p>
+<div class="sort-buttons">
+  <span>Sort by: </span>
+  <button ng-click="sortBy('-hoursPerWeek')">Hours per Week</button>
+  <button ng-click="sortBy('-daysPerWeek')">Days per Week</button>
+  <button ng-click="sortBy('name')">Name</button>
+</div>
+<table class="activity-table">
+  <tr>
+    <th>Activity</th>
+    <th>Hours</th>
+    <th>Minutes</th>
+    <th>Days per week</th>
+    <th>Hours per week</th>
+  </tr>
+
+  <tr ng-repeat="activity in activities | filter:query">
+    <td><input id="name-input" type="text" ng-model="activity.name"/></td>
+    <td><input type="number" class="hours-input" ng-model="activity.hours" min="0" max="24" ng-change="updateHoursLeft()"/></td>
+    <td><input type="number" ng-model="activity.minutes" min="0" max="59" ng-change="updateHoursLeft()"/></td>
+    <td><input type="number" ng-model="activity.daysPerWeek" min="1" max="7" ng-change="updateHoursLeft()"/></td>
+    <td>{{hoursPerWeek(activity.name)}}</td>
+    <td><a href="" ng-click="deleteActivity(activity.name)">x</a></td>
+  </tr>
+</table>
+<button ng-click="addActivity()">Add an activity</button>
+
+<!-- fancy formatting test
+<div class="activity-table">
+    <div ng-repeat="activity in activities" class='activity-card'>
+        <div class="hours-per-week">
+            {{activity.minutes / 60 * activity.daysPerWeek}}
+        </div>
+        <div class='activity-info'>
+            <p class='activity-name'>
+                {{activity.name}}
+            </p>
+            <p class='activity-duration'>
+                {{activity.minutes / 60}} × {{activity.daysPerWeek}}
+            </p>
+        </div>
+    </div>
+</div>
+-->
