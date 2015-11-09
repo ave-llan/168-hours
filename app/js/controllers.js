@@ -2,9 +2,9 @@
 
 /* Controllers */
 
-var oneSixtyEightApp = angular.module('oneSixtyEightApp', [])
+var oneSixtyEightControllers = angular.module('oneSixtyEightControllers', [])
 
-oneSixtyEightApp.controller('ScheduleListCtrl', ['$scope', '$http',
+oneSixtyEightControllers.controller('ScheduleListCtrl', ['$scope', '$http',
   function($scope, $http) {
     $http.get('activities/activities.json').success(function (data) {
 

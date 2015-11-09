@@ -6,7 +6,7 @@ describe('oneSixtyEightApp controllers', function() {
   describe('ScheduleListCtrl', function(){
     var scope, ctrl, $httpBackend
 
-    beforeEach(module('oneSixtyEightApp'))
+    beforeEach(module('oneSixtyEightControllers'))
     beforeEach(inject(function(_$httpBackend_, $rootScope, $controller) {
       $httpBackend = _$httpBackend_
       $httpBackend.expectGET('activities/activities.json').
