@@ -1,6 +1,6 @@
 <div class="background-hours">{{timeRemaining / 60}}</div>
 
-<p>You have <strong>{{timeRemaining / 60}}</strong> unscheduled hours per week.</p>
+<p>You have <strong>{{timeRemaining / 60 | truncateNumber:2}}</strong> unscheduled hours per week.</p>
 <p>
     Search: <input ng-model="query"></p>
 <div class="sort-buttons">
@@ -23,7 +23,7 @@
     <td><input type="number" class="hours-input" ng-model="activity.hours" min="0" max="24" ng-change="updateHoursLeft()"/></td>
     <td><input type="number" ng-model="activity.minutes" min="0" max="59" ng-change="updateHoursLeft()"/></td>
     <td><input type="number" ng-model="activity.daysPerWeek" min="1" max="7" ng-change="updateHoursLeft()"/></td>
-    <td>{{hoursPerWeek(activity.name)}}</td>
+    <td>{{hoursPerWeek(activity.name) | truncateNumber:2}}</td>
     <td><a href="" ng-click="deleteActivity(activity.name)">x</a></td>
   </tr>
 </table>
