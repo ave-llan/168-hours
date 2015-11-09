@@ -4,7 +4,8 @@
 
 var oneSixtyEightApp = angular.module('oneSixtyEightApp', [
   'ngRoute',
-  'oneSixtyEightControllers'
+  'oneSixtyEightControllers',
+  'oneSixtyEightFilters'
 ])
 
 oneSixtyEightApp.config(['$routeProvider',
