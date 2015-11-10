@@ -66,6 +66,13 @@ oneSixtyEightControllers.controller('ScheduleListCtrl', ['$scope', '$http',
         return 0
       })
     }
+
+    $scope.toTitleCase = function (text) {
+      return text.replace(/\w\S*/g, function (word) {
+        return word[0].toUpperCase() + word.slice(1).toLowerCase()
+      })
+    }
+
 }])
 
 oneSixtyEightControllers.controller('ActivityDetailCtrl', ['$scope', '$routeParams',
