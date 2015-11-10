@@ -10,6 +10,7 @@ oneSixtyEightControllers.controller('ScheduleListCtrl', ['$scope', '$http',
 
       $scope.activities = data.map(function (activity) {
         activity.hoursPerWeek = (activity.minutes / 60 + activity.hours) * activity.daysPerWeek
+        activity.name = $scope.toTitleCase(activity.name)
         return activity
       })
 
