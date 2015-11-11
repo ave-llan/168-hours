@@ -38,29 +38,32 @@ describe('168 Hours App', function () {
         })
       }
 
-      expect(getNames()).toEqual([
-        'read novel',
-        'birdwatching',
-        'watch a movie'
-        ])
-
       var sortButtons = element.all(by.css('.sort-buttons button'))
       expect(sortButtons.count()).toBe(3)
+
+
+      // click 'Hours per week' button
+      sortButtons.get(0).click()
+      expect(getNames()).toEqual([
+        'Read Novel',
+        'Birdwatching',
+        'Watch A Movie'
+        ])
 
       // click 'sort by name' button
       sortButtons.get(2).click()
       expect(getNames()).toEqual([
-        'birdwatching',
-        'read novel',
-        'watch a movie'
+        'Birdwatching',
+        'Read Novel',
+        'Watch A Movie'
         ])
 
       // click 'days per week' button
       sortButtons.get(1).click()
       expect(getNames()).toEqual([
-        'read novel',
-        'birdwatching',
-        'watch a movie'
+        'Read Novel',
+        'Watch A Movie',
+        'Birdwatching'
         ])
 
     })
