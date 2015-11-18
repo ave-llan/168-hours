@@ -20,9 +20,15 @@ td, th {
   padding: 0 0.5em 0 0.5em; }
 
 .activity-card {
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
-  align-items: center;
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   background-color: #c6dbef;
   max-width: 200px;
   margin: 1em; }
