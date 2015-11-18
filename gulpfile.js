@@ -1,8 +1,7 @@
-var gulp = require('gulp')
-var sass = require('gulp-sass')
-var autoprefixer = require('gulp-autoprefixer')
-var browserSync = require('browser-sync').create()
-// var concat = require('gulp-concat')  // will be used to concat js files
+var gulp         = require('gulp')
+  , sass         = require('gulp-sass')
+  , autoprefixer = require('gulp-autoprefixer')
+  , browserSync  = require('browser-sync').create()
 
 var reload = browserSync.reload
 
