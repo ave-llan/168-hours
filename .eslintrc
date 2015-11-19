@@ -15,7 +15,8 @@
         "semi": [
             2,
             "never"
-        ]
+        ],
+        "eol-last": 2
     },
     "env": {
         "browser": true,
