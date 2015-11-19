@@ -59,7 +59,7 @@ gulp.task('styles', function () {
  */
 function watchLogger (taskNames) {
   return function (event) {
-    console.log('File', event.path, 'was', event.type,
+    console.log('File', event.path, 'was', event.type,           // eslint-disable-line no-console
                 ', running tasks:', taskNames.join(', ') + '...')
   }
 }
