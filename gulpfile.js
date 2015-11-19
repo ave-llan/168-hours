@@ -17,7 +17,7 @@ gulp.task('default', ['styles', 'lint', 'test'], function () {
   gulp.watch(['app/**/*.html'], reload)
   gulp.watch(['app/**/*.{scss,css}'], ['styles', reload])
     .on('change', watchLogger(['styles']))
-  gulp.watch(['app/**/*.js'], ['lint', 'test', reload])
+  gulp.watch(['app/**/*.js'], ['lint', reload])
     .on('change', watchLogger(['lint']))
 })
 
@@ -42,8 +42,7 @@ gulp.task('lint', function () {
 // use karma to run Jasmine tests
 gulp.task('test', function (done) {
   new Server({
-    configFile: __dirname + '/test/karma.conf.js',
-    singleRun: true
+    configFile: __dirname + '/test/karma.conf.js'
   }, done).start()
 })
 
