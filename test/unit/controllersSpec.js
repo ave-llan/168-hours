@@ -1,4 +1,6 @@
-'use strict';
+/*global describe, beforeEach, inject, it, expect*/
+
+'use strict'
 
 /* jasmine specs for controllers go here */
 describe('oneSixtyEightApp controllers', function() {
@@ -12,22 +14,22 @@ describe('oneSixtyEightApp controllers', function() {
       $httpBackend.expectGET('activities/activities.json').
         respond([
           {
-            "name": "sleep",
-            "minutes": 420,
-            "daysPerWeek": 7,
-            "category": "sleep"
+            'name': 'sleep',
+            'minutes': 420,
+            'daysPerWeek': 7,
+            'category': 'sleep'
           },
           {
-            "name": "eat breakfast",
-            "minutes": 45,
-            "daysPerWeek": 7,
-            "category": "food"
+            'name': 'eat breakfast',
+            'minutes': 45,
+            'daysPerWeek': 7,
+            'category': 'food'
           },
           {
-            "name": "Rudy AM walk",
-            "minutes": 30,
-            "daysPerWeek": 7,
-            "category": "pet"
+            'name': 'Rudy AM walk',
+            'minutes': 30,
+            'daysPerWeek': 7,
+            'category': 'pet'
           }
         ])
 

@@ -1,4 +1,5 @@
-'use strict';
+/*global describe, beforeEach, inject, it, expect*/
+'use strict'
 
 /* jasmine specs for filters go here */
 
@@ -9,8 +10,7 @@ describe('filter', function() {
 
   describe('truncateNumber', function() {
 
-    it('hould truncate a decimal to the given number of places',
-        inject(function(truncateNumberFilter) {
+    it('should truncate a decimal to the given number of places', inject(function(truncateNumberFilter) {
       expect(truncateNumberFilter(1.54321, 4)).toBe('1.5432')
       expect(truncateNumberFilter(1.54321, 3)).toBe('1.543')
       expect(truncateNumberFilter(1.54321, 2)).toBe('1.54')
@@ -20,5 +20,6 @@ describe('filter', function() {
       expect(truncateNumberFilter(1.5, 0)).toBe('2')
       expect(truncateNumberFilter(1.5)).toBe('2')
     }))
+
   })
 })
