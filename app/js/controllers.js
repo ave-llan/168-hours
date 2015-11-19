@@ -1,4 +1,5 @@
-'use strict';
+/* global angular */
+'use strict'
 
 /* Controllers */
 
@@ -74,9 +75,11 @@ oneSixtyEightControllers.controller('ScheduleListCtrl', ['$scope', '$http',
       })
     }
 
-}])
+  }
+])
 
 oneSixtyEightControllers.controller('ActivityDetailCtrl', ['$scope', '$routeParams',
   function($scope, $routeParams) {
     $scope.activityID = $routeParams.activityID
-  }])
+  }
+])
