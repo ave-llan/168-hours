@@ -6,7 +6,9 @@
 describe('oneSixtyEightApp controllers', function() {
 
   describe('ScheduleListCtrl', function(){
-    var scope, ctrl, $httpBackend
+    var scope
+      , $httpBackend
+      , ctrl                                        //eslint-disable-line no-unused-vars
 
     beforeEach(module('oneSixtyEightControllers'))
     beforeEach(inject(function(_$httpBackend_, $rootScope, $controller) {
