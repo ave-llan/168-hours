@@ -39,7 +39,7 @@ gulp.task('lint', function () {
     .pipe(eslint.failAfterError())
 })
 
-// use karma to run Jasmine tests
+// starts a karma to run Jasmine tests (this will keep running and updating)
 gulp.task('test', function (done) {
   new Server({
     configFile: __dirname + '/test/karma.conf.js'
