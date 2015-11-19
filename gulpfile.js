@@ -1,12 +1,13 @@
 var gulp         = require('gulp')
   , sass         = require('gulp-sass')
   , autoprefixer = require('gulp-autoprefixer')
-  , eslint       = require('gulp-eslint')
   , browserSync  = require('browser-sync').create()
   , reload       = browserSync.reload
+  , eslint       = require('gulp-eslint')
+  , Server       = require('karma').Server
 
 // static server + linting and recompiling and reloading after any changes
-gulp.task('default', ['styles', 'lint'], function () {
+gulp.task('default', ['styles', 'lint', 'test'], function () {
 
   browserSync.init({
     server: './app',
@@ -16,18 +17,9 @@ gulp.task('default', ['styles', 'lint'], function () {
   gulp.watch(['app/**/*.html'], reload)
   gulp.watch(['app/**/*.{scss,css}'], ['styles', reload])
     .on('change', watchLogger(['styles']))
-  gulp.watch(['app/**/*.js'], ['lint', reload])
+  gulp.watch(['app/**/*.js'], ['lint', 'test', reload])
     .on('change', watchLogger(['lint']))
 })
-
-// lint all .js files in the project
-gulp.task('lint', function () {
-  return gulp.src(['**/*.js','!node_modules/**','!app/bower_components/**'])
-    .pipe(eslint())
-    .pipe(eslint.format())
-    .pipe(eslint.failAfterError())
-})
-
 
 // sass => css with autoprefixes
 gulp.task('styles', function () {
@@ -39,6 +31,21 @@ gulp.task('styles', function () {
     .pipe(gulp.dest('./app/css'))
 })
 
+// lint all .js files in the project
+gulp.task('lint', function () {
+  return gulp.src(['**/*.js','!node_modules/**','!app/bower_components/**'])
+    .pipe(eslint())
+    .pipe(eslint.format())
+    .pipe(eslint.failAfterError())
+})
+
+// use karma to run Jasmine tests
+gulp.task('test', function (done) {
+  new Server({
+    configFile: __dirname + '/test/karma.conf.js',
+    singleRun: true
+  }, done).start()
+})
 
 /**
  * @param {String[]} - names of tasks that will be run
