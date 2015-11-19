@@ -1,4 +1,5 @@
-'use strict';
+/* global describe, beforeEach, browser, element, by, it, expect*/
+'use strict'
 
 /* http://docs.angularjs.org/guide/dev_guide.e2e-testing */
 
@@ -8,7 +9,7 @@ describe('168 Hours App', function () {
 
     beforeEach(function() {
       browser.get('app/index.html')
-    });
+    })
 
     var activityList = element.all(by.repeater('activity in activities'))
     var query = element(by.model('query'))
@@ -17,11 +18,11 @@ describe('168 Hours App', function () {
 
       expect(activityList.count()).toBe(16)
 
-      query.sendKeys('rudy');
+      query.sendKeys('rudy')
       expect(activityList.count()).toBe(3)
 
-      query.clear();
-      query.sendKeys('bird');
+      query.clear()
+      query.sendKeys('bird')
       expect(activityList.count()).toBe(1)
     })
 
@@ -48,7 +49,7 @@ describe('168 Hours App', function () {
         'Read Novel',
         'Birdwatching',
         'Watch A Movie'
-        ])
+      ])
 
       // click 'sort by name' button
       sortButtons.get(2).click()
@@ -56,7 +57,7 @@ describe('168 Hours App', function () {
         'Birdwatching',
         'Read Novel',
         'Watch A Movie'
-        ])
+      ])
 
       // click 'days per week' button
       sortButtons.get(1).click()
@@ -64,7 +65,7 @@ describe('168 Hours App', function () {
         'Read Novel',
         'Watch A Movie',
         'Birdwatching'
-        ])
+      ])
 
     })
 
