@@ -47,9 +47,6 @@
     "watchify": "^3.5.0"
   },
   "dependencies": {
-    "angular": "^1.4.7",
-    "karma": "^0.13.15",
-    "karma-firefox-launcher": "^0.1.7",
-    "watchify": "^3.6.1"
+    "angular": "^1.4.7"
   }
 }
