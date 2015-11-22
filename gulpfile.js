@@ -9,10 +9,10 @@ var gulp         = require('gulp')
   , Server       = require('karma').Server
 
 // static server + linting and recompiling and reloading after any changes
-gulp.task('default', ['copy-html', 'styles', 'lint', 'test'], function () {
+gulp.task('default', ['copy-html', 'styles', 'scripts', 'lint'], function () {
 
   browserSync.init({
-    server: './dist',
+    server: './app',
     port: 3000
   })
 
