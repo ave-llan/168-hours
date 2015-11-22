@@ -9,8 +9,7 @@ After cloning the project, install packages:
 npm install
 ```
 
-To start a local server:
+To start a local server with live updateds as the project changes:
 ```
-npm start
+gulp
 ```
-And point your browser at `http://localhost:8080/app/index.html`.
