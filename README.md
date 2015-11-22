@@ -9,7 +9,7 @@ After cloning the project, install packages:
 npm install
 ```
 
-To start a local server with live updateds as the project changes:
+To start a local server with live updates as the project changes:
 ```
 gulp
 ```
