@@ -3,6 +3,7 @@
 
 $font-stack: Oswald, sans-serif;
 $logo-color: rgba(252, 245, 118, 1);
+$light-border-color: #E6E6E6;
 
 /* avoid landscape zoom-in on mobile */
 html {
@@ -67,15 +68,17 @@ td, th {
   display: none;
 }
 
-.activity-table td {
-  padding-bottom: 0.5em;
-}
+.activity-table {
+  td {
+    padding-bottom: 0.5em;
+  }
 
-.activity-table input {
-  border: 0;
-  border-bottom: 1px solid #E6E6E6;
-}
+  input {
+    border: 0;
+    border-bottom: 1px solid #$light-border-color
+  }
 
-input[type=number] {
-  width: 3em;
+  input[type=number] {
+    width: 3em;
+  }
 }
