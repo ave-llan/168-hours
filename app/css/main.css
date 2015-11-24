@@ -67,5 +67,5 @@ td, th {
   border: 0;
   border-bottom: 1px solid #E6E6E6; }
 
-input[type=number] {
+.activity-table input[type=number] {
   width: 3em; }
